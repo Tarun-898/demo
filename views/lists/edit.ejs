@@ -1,0 +1,37 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <form method="POST" action="/lists/<%=listData._id%>?_method=PUT" novalidate class="needs-validation">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="title" value="<%=listData.title%>" type="text" class="form-control" required>
+        <div class="valid-feedback">Title Looks Good</div>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input name="description" value="<%=listData.description%>" type="text" class="form-control" required>
+        <div class="invalid-feedback">Please Enter a Valid Description </div>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input name="image.filename" value="<%= listData.image.url %>" type="text" class="form-control">
+        <!-- <input name="image.url" value="<%= listData.image.url %>"> -->
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input name="price" value="<%=listData.price%>" type="number" class="form-control" required>
+        <div class="invalid-feedback">Please Check The Price Again</div>
+    </div>
+    <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input name="location" value="<%=listData.location%>" type="text" class="form-control" required>
+        <div class="invalid-feedback">Please Enter a Valid Location</div>
+    </div>
+        <button class="btn btn-dark">Submit Details</button>
+        <br><br>
+    </form>
+</div>
+</div>
+
+</body>

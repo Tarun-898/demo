@@ -1,0 +1,21 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h3>All Lists</h3>
+    <!-- <form method="GET" action="/lists/new">
+        <button>Create new List</button> -->
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <%for(let list of allList){%>
+            <a class="an"href="/lists/<%=list._id%>">
+        <div class="card col" style="width: 20rem;">
+            <img src="<%=list.image.url%>" class="card-img-top" alt="..." style="height:20rem">
+            <div class="card-body">
+              <p class="card-text"><b><%=list.title%></b>
+            <br>
+            &#8377; <%=list.price.toLocaleString("en-IN") %> per guest
+        </p>
+            </div>
+          </div></a>
+          <%}%>
+        </div>
+   
+</body>

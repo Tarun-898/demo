@@ -1,0 +1,43 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <h3> CREATE NEW LIST</h3>
+    <form method="POST" action="/lists" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="title" placeholder="enter title" type="text" class="form-control" required>
+            <div class="valid-feedback">Title Looks Good</div>
+        </div>
+        <div class="mb-3" >
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" placeholder="enter description" type="text" class="form-control" required></textarea>
+            <div class="invalid-feedback">Please Enter a Valid Description </div>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input name="image" placeholder="enter image url" type="text" class="form-control">
+        </div>
+        <div class="mb-3" >
+            <label for="price" class="form-label">Price</label>
+            <input name="price" placeholder="enter price" type="number" class="form-control" required>
+            <div class="invalid-feedback">Please Check The Price Again</div>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input name="location" placeholder="enter location" type="text" class="form-control" required>
+            <div class="invalid-feedback">Please Enter a Valid Location</div>
+        </div>
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input name="country" placeholder="enter country" type="text" class="form-control" required>
+            <div class="invalid-feedback">Please Enter a Valid Country</div>
+        </div>
+        
+        <br>
+        <button class="btn btn-dark" >Submit Details</button>
+        <br><br>
+    </form>
+</div>
+</div>
+</body>
