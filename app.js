@@ -12,6 +12,7 @@ const Review=require("./models/review.js");
 const session=require("express-session");
 const flash=require("connect-flash");
 
+
 const lists=require("./routes/list.js");
 const reviews=require("./routes/review.js");
 
@@ -52,8 +53,8 @@ const sessionOption={
 };
 
 app.get("/",(req,res)=>{
-    res.send("hii there");
     console.log("hii there");
+    res.send("hii there");
 });
 
 app.use(session(sessionOption));
@@ -73,6 +74,10 @@ app.use("/lists",lists);
 app.use("/lists/:id/reviews",reviews);
 
 app.all("*",(req , res,next)=>{
-    next( new expressError(500,"something went wrong"));
+    next(new expressError(404,"Page not found"));
 });
 
+app.use((err,req,res,next)=>{
+    let {statusCode=500, message="something went wrong"}= err;
+    res.status(statusCode).send(message);
+});
