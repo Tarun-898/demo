@@ -8,7 +8,8 @@ const list=require("../models/listing.js");
 
 
 const validateReview=(req,res,next)=>{
-  let {error}=reviewSchema.validate(req.body);
+  console.log(req.body);
+  let {error}=reviewSchema.validate(req.body.review);
   if(error){
         let errMsg =error.details.map((el)=>el.message).join(",")
         throw new expressError(400,error)
